@@ -14,8 +14,6 @@ export default class Example2 extends React.Component {
   }
   handleMouseDown(e) {
     this.buttonClicker();
-
-    e.stopPropagation();
   }
 
   buttonClicker() {
@@ -24,10 +22,9 @@ export default class Example2 extends React.Component {
       num: this.state.num + 1
     });
     console.log(this.state.num);
-    for(let i=0; i<=this.state.num; i++) { // we can do basic logic in react, huzzah!
-      console.log(i)
+    for(let i=1; i<=this.state.num; i++) { // we can do basic logic in react, huzzah!
+      console.log('test')
     }
-
   }
 
 
@@ -36,8 +33,14 @@ export default class Example2 extends React.Component {
    return(
      <div>
        <div> hello world</div>
-       <button onClick={this.handleMouseDown}>this is a button</button>
-       <span> {this.state.num} </span>
+       <div>
+         <button onClick={this.buttonClicker}>this is a button</button>
+         <span> {this.state.num} </span></div>
+       <div>
+         <button onClick={this.handleMouseDown}> we can do this either way</button>
+         <span> {this.state.num} </span>
+       </div>
+
        <div>{this.props.sampleProp}</div> {/* use passed props directly in child component */}
        <div>{this.state.passedProp}</div> {/* passed prop incorporated into local state */}
      </div>
