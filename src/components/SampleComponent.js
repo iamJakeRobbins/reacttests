@@ -2,11 +2,12 @@ import React from 'react';
 
 export default class Example2 extends React.Component {
 
-  constructor() {
-    super();
-    console.log('hi boys')
+  constructor(props) {
+    super(props);
+    console.log('hi boys');
     this.state = {
-      num: 1
+      num: 1, //locally established in state
+      passedProp: this.props.sampleProp + 'and updated in local state', //incorporate a passed prop into local state
     };
     this.buttonClicker = this.buttonClicker.bind(this);
     this.handleMouseDown = this.handleMouseDown.bind(this);
@@ -18,11 +19,14 @@ export default class Example2 extends React.Component {
   }
 
   buttonClicker() {
-    // this.state.num ++;
-    this.setState({ // this is why react is garbo
+    // this.state.num ++; this doesn't work need to figure out why
+    this.setState({ // update locally declared variables within state
       num: this.state.num + 1
     });
     console.log(this.state.num);
+    for(let i=0; i<=this.state.num; i++) { // we can do basic logic in react, huzzah!
+      console.log(i)
+    }
 
   }
 
@@ -31,9 +35,11 @@ export default class Example2 extends React.Component {
   render() {
    return(
      <div>
-       <span> hello world</span>
+       <div> hello world</div>
        <button onClick={this.handleMouseDown}>this is a button</button>
        <span> {this.state.num} </span>
+       <div>{this.props.sampleProp}</div> {/* use passed props directly in child component */}
+       <div>{this.state.passedProp}</div> {/* passed prop incorporated into local state */}
      </div>
    )
  }

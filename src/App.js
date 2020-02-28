@@ -11,7 +11,7 @@ function App() {
         <p>
           is a test
         </p>
-        <SampleComponent />
+        <SampleComponent sampleProp={'im a prop string passed from the parent'} />
 
       </header>
     </div>
