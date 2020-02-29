@@ -8,6 +8,7 @@ export default class SampleComponent extends React.Component {
     this.state = {
       num: 1, //locally established in state
       passedProp: this.props.sampleProp + 'and updated in local state', //incorporate a passed prop into local state
+      toUpdateParent: 'child state item passed to parent',
     };
     this.buttonClicker = this.buttonClicker.bind(this);
     this.handleMouseDown = this.handleMouseDown.bind(this);
@@ -47,7 +48,7 @@ export default class SampleComponent extends React.Component {
 
        <div>{this.props.sampleProp}</div> {/* use passed props directly in child component */}
        <div>{this.state.passedProp}</div> {/* passed prop incorporated into local state */}
-       <div><button onClick={this.props.action} >update parent var</button></div>
+       <div><button onClick={this.props.action} value={this.state.toUpdateParent}>update parent var</button></div>
      </div>
    )
  }

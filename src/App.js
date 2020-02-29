@@ -14,9 +14,10 @@ class App extends React.Component
   }
 
   // This method will be sent to the child component
-  handler() {
+  handler(e) {
+    console.log(e.target.value)
     this.setState({
-      varChangedByChild: 'child component updated parent state (sort of)',
+      varChangedByChild: e.target.value,
     });
   }
 
