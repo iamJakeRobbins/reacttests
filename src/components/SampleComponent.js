@@ -27,7 +27,7 @@ export default class SampleComponent extends React.Component {
         <div>
           <h1>We're adding a child component to the child component</h1>
         </div>
-        <NestedChildComponent />
+        <NestedChildComponent headProps={this.props.sampleProp}/>
       </div>
     )
   }

@@ -6,8 +6,8 @@ export default class NestedChildComponent extends React.Component {
       <div>i'm living inside the child!</div>
     )
   }
-  constructor() {
-    super();
-    console.log('hi')
+  constructor(state, props) {
+    super(state, props);
+    console.log(this.props)
   }
 }
