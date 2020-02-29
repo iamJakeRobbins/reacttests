@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Example2 extends React.Component {
+export default class SampleComponent extends React.Component {
 
-  constructor(props) {
-    super(props);
-    console.log('hi boys');
+  constructor(state, props, context) {
+    super(state,props, context);
+    console.log(this);
     this.state = {
       num: 1, //locally established in state
       passedProp: this.props.sampleProp + 'and updated in local state', //incorporate a passed prop into local state
@@ -22,6 +22,10 @@ export default class Example2 extends React.Component {
       num: this.state.num + 1
     });
     console.log(this.state.num);
+    this.doConsoleLogs()
+  }
+
+  doConsoleLogs() {
     for(let i=1; i<=this.state.num; i++) { // we can do basic logic in react, huzzah!
       console.log('test')
     }
