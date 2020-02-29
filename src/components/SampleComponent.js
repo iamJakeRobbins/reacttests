@@ -1,4 +1,5 @@
 import React from 'react';
+import NestedChildComponent from "./NestedChildComponent";
 
 export default class SampleComponent extends React.Component {
 
@@ -23,6 +24,10 @@ export default class SampleComponent extends React.Component {
             update parent var
           </button>
         </div>
+        <div>
+          <h1>We're adding a child component to the child component</h1>
+        </div>
+        <NestedChildComponent />
       </div>
     )
   }
