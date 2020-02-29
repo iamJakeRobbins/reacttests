@@ -2,6 +2,31 @@ import React from 'react';
 
 export default class SampleComponent extends React.Component {
 
+  render() {
+    return(
+      <div>
+        <div> hello world</div>
+        <div>
+          <button onClick={this.buttonClicker}>this is a button</button>
+          <span> {this.state.num} </span></div>
+        <div>
+          <button onClick={this.handleMouseDown}> we can do this either way</button>
+          <span> {this.state.num} </span>
+        </div>
+
+        <div>{this.props.sampleProp}</div> {/* use passed props directly in child component */}
+        <div>{this.state.passedProp}</div> {/* passed prop incorporated into local state */}
+        <div>
+          <button
+            onClick={this.props.action}
+            value={this.state.toUpdateParent}>
+            update parent var
+          </button>
+        </div>
+      </div>
+    )
+  }
+
   constructor(state, props, context) {
     super(state,props, context);
     console.log(this);
@@ -33,25 +58,6 @@ export default class SampleComponent extends React.Component {
   }
 
 
-
-  render() {
-   return(
-     <div>
-       <div> hello world</div>
-       <div>
-         <button onClick={this.buttonClicker}>this is a button</button>
-         <span> {this.state.num} </span></div>
-       <div>
-         <button onClick={this.handleMouseDown}> we can do this either way</button>
-         <span> {this.state.num} </span>
-       </div>
-
-       <div>{this.props.sampleProp}</div> {/* use passed props directly in child component */}
-       <div>{this.state.passedProp}</div> {/* passed prop incorporated into local state */}
-       <div><button onClick={this.props.action} value={this.state.toUpdateParent}>update parent var</button></div>
-     </div>
-   )
- }
 
 
 }
