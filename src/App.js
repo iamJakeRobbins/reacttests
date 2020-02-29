@@ -8,14 +8,15 @@ class App extends React.Component
   constructor(state) {
     super();
     this.state = {
-      varChangedByChild: 'Set',
-    }
+      varChangedByChild: 'var set by parent',
+    };
+    this.handler = this.handler.bind(this);
   }
 
   // This method will be sent to the child component
   handler() {
     this.setState({
-      varChangedByChild: 'doooo do do i\'ve been change from the child',
+      varChangedByChild: 'child component updated parent state (sort of)',
     });
   }
 
