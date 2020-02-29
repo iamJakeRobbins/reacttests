@@ -47,6 +47,7 @@ export default class SampleComponent extends React.Component {
 
        <div>{this.props.sampleProp}</div> {/* use passed props directly in child component */}
        <div>{this.state.passedProp}</div> {/* passed prop incorporated into local state */}
+       <div><button onClick={this.props.action} >update parent var</button></div>
      </div>
    )
  }

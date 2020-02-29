@@ -15,7 +15,7 @@ class App extends React.Component
   // This method will be sent to the child component
   handler() {
     this.setState({
-      messageShown: true
+      varChangedByChild: 'doooo do do i\'ve been change from the child',
     });
   }
 
